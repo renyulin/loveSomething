@@ -44,7 +44,6 @@ public class WebActivity extends BaseActivity {
 
     @Override
     public void onSuccess(Object responseEntity, String code) {
-//        {"status":"success","html":"\n
         Map<String, Object> map = (Map<String, Object>) responseEntity;
         String url = (String) map.get("html");
         htmlFragment.initWebView(url);

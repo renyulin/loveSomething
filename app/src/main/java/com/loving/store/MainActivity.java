@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.loving.store.adapter.MainTabAdapter;
+import com.loving.store.service.RomoteService;
 import com.loving.store.ui.ExpenditureFragment;
 import com.loving.store.ui.IncomeFragment;
 import com.loving.store.ui.MineFragment;
 import com.loving.store.view.MainActivityViewPager;
 import com.loving.store.view.tabpage.TabPageIndicator;
-import com.loving.store.web.WebActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,15 +66,22 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if ((System.currentTimeMillis() - mExitTime) > 800) {
+        if ((System.currentTimeMillis() - mExitTime) > 1000) {
             Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
             mExitTime = System.currentTimeMillis();
         } else {
-            System.exit(0);
+//            super.onBackPressed();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
         }
     }
 
     public void mainClick(View view) {
-        startActivity(new Intent(this, WebActivity.class));
+//        startActivity(new Intent(this, WebActivity.class));
+//
+//        Intent remoteService = new Intent(this, RomoteService.class);
+//
+//        startService(remoteService);
     }
 }

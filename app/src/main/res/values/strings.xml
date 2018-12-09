@@ -3,4 +3,6 @@
     <string name="tab_mine_tv">我的</string>
     <string name="tab_expenditure_tv">支出</string>
     <string name="tab_income_tv">收入</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
